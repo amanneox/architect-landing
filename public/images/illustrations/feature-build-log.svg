@@ -1,0 +1,57 @@
+<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+  <!-- Blueprint grid background -->
+  <defs>
+    <pattern id="smallGrid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="300" fill="url(#smallGrid)" />
+  
+  <!-- Feature grid items -->
+  <g transform="translate(60, 75)">
+    <rect x="0" y="0" width="80" height="80" rx="8" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.08)"/>
+    <rect x="24" y="24" width="32" height="32" rx="4" fill="url(#orangeGrad)"/>
+    
+    <rect x="100" y="0" width="80" height="80" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.06)"/>
+    <circle cx="140" cy="40" r="16" fill="url(#blueGrad)"/>
+    
+    <rect x="200" y="0" width="80" height="80" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.06)"/>
+    <rect x="224" y="24" width="32" height="32" rx="4" transform="rotate(45 240 40)" fill="url(#greenGrad)"/>
+    
+    <rect x="0" y="100" width="80" height="80" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.06)"/>
+    <rect x="24" y="124" width="32" height="32" rx="4" fill="url(#purpleGrad)"/>
+    
+    <rect x="100" y="100" width="80" height="80" rx="8" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.08)"/>
+    <rect x="124" y="124" width="32" height="32" rx="4" fill="url(#yellowGrad)"/>
+    
+    <rect x="200" y="100" width="80" height="80" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.06)"/>
+    <circle cx="240" cy="140" r="16" fill="url(#indigoGrad)"/>
+  </g>
+  
+  <defs>
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(249,115,22,0.4)"/>
+      <stop offset="100%" stop-color="rgba(239,68,68,0.2)"/>
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(96,165,250,0.4)"/>
+      <stop offset="100%" stop-color="rgba(34,211,238,0.2)"/>
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(74,222,128,0.4)"/>
+      <stop offset="100%" stop-color="rgba(20,184,166,0.2)"/>
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(192,132,252,0.4)"/>
+      <stop offset="100%" stop-color="rgba(236,72,153,0.2)"/>
+    </linearGradient>
+    <linearGradient id="yellowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(250,204,21,0.4)"/>
+      <stop offset="100%" stop-color="rgba(251,146,60,0.2)"/>
+    </linearGradient>
+    <linearGradient id="indigoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(129,140,248,0.4)"/>
+      <stop offset="100%" stop-color="rgba(168,85,247,0.2)"/>
+    </linearGradient>
+  </defs>
+</svg>

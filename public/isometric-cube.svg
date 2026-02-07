@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <!-- Grid Background -->
+  <defs>
+    <pattern id="isoGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="300" fill="url(#isoGrid)"/>
+  
+  <!-- Isometric 3-tier cube structure - centered -->
+  <g transform="translate(200, 145)">
+    
+    <!-- Level 3 - Bottom tier (largest) -->
+    <g stroke="rgba(255,255,255,0.22)" stroke-width="1" fill="none">
+      <!-- Top face (horizontal diamond) -->
+      <path d="M0,-15 L70,15 L0,45 L-70,15 Z"/>
+      <!-- Vertical/downward edges from top face -->
+      <line x1="-70" y1="15" x2="-70" y2="65"/>
+      <line x1="70" y1="15" x2="70" y2="65"/>
+      <line x1="0" y1="45" x2="0" y2="95"/>
+      <!-- Bottom face edges -->
+      <path d="M-70,65 L0,95 L70,65"/>
+      <!-- Inner edges connecting tiers -->
+      <line x1="-70" y1="15" x2="0" y2="-15"/>
+      <line x1="70" y1="15" x2="0" y2="-15"/>
+    </g>
+    
+    <!-- Level 2 - Middle tier -->
+    <g stroke="rgba(255,255,255,0.32)" stroke-width="1" fill="none">
+      <!-- Top face -->
+      <path d="M0,-45 L48,-28 L0,-12 L-48,-28 Z"/>
+      <!-- Vertical edges -->
+      <line x1="-48" y1="-28" x2="-48" y2="8"/>
+      <line x1="48" y1="-28" x2="48" y2="8"/>
+      <line x1="0" y1="-12" x2="0" y2="25"/>
+      <!-- Connection to bottom tier -->
+      <line x1="-48" y1="-28" x2="0" y2="-45"/>
+      <line x1="48" y1="-28" x2="0" y2="-45"/>
+    </g>
+    
+    <!-- Level 1 - Top tier (smallest) -->
+    <g stroke="rgba(255,255,255,0.42)" stroke-width="1" fill="none">
+      <!-- Top face -->
+      <path d="M0,-72 L28,-60 L0,-48 L-28,-60 Z"/>
+      <!-- Vertical edges -->
+      <line x1="-28" y1="-60" x2="-28" y2="-35"/>
+      <line x1="28" y1="-60" x2="28" y2="-35"/>
+      <line x1="0" y1="-48" x2="0" y2="-22"/>
+      <!-- Connection to middle tier -->
+      <line x1="-28" y1="-60" x2="0" y2="-72"/>
+      <line x1="28" y1="-60" x2="0" y2="-72"/>
+    </g>
+    
+    <!-- Vertex dots -->
+    <circle cx="0" cy="95" r="2" fill="rgba(255,255,255,0.35)"/>
+    <circle cx="0" cy="45" r="1.5" fill="rgba(255,255,255,0.45)"/>
+    <circle cx="0" cy="-12" r="1.5" fill="rgba(255,255,255,0.5)"/>
+    <circle cx="0" cy="-48" r="1" fill="rgba(255,255,255,0.55)"/>
+    <circle cx="0" cy="125" r="2" fill="rgba(255,255,255,0.25)"/>
+    
+  </g>
+</svg>

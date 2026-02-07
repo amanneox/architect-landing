@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <!-- Grid Background -->
+  <defs>
+    <pattern id="codeGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
+    </pattern>
+    <linearGradient id="genGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(16,185,129,0)"/>
+      <stop offset="50%" stop-color="rgba(16,185,129,0.15)"/>
+      <stop offset="100%" stop-color="rgba(16,185,129,0)"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#codeGrid)"/>
+  
+  <!-- Main Content - Scaled to fit -->
+  <g transform="translate(25, 20) scale(0.88)">
+    
+    <!-- Left: Design System Input -->
+    <g transform="translate(0, 20)">
+      <text x="60" y="-5" fill="rgba(255,255,255,0.3)" font-family="monospace" font-size="9" text-anchor="middle">Design System</text>
+      
+      <!-- Component Card 1 -->
+      <rect x="0" y="10" width="120" height="70" rx="4" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+      <rect x="10" y="22" width="100" height="30" rx="2" fill="rgba(59,130,246,0.1)" stroke="rgba(59,130,246,0.3)" stroke-width="1"/>
+      <text x="60" y="42" fill="rgba(255,255,255,0.6)" font-family="monospace" font-size="10" text-anchor="middle">Button</text>
+      <text x="10" y="65" fill="rgba(255,255,255,0.3)" font-family="monospace" font-size="7">variant: primary</text>
+      
+      <!-- Component Card 2 -->
+      <rect x="0" y="90" width="120" height="70" rx="4" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+      <rect x="10" y="102" width="100" height="40" rx="2" fill="rgba(139,92,246,0.1)" stroke="rgba(139,92,246,0.3)" stroke-width="1"/>
+      <text x="60" y="127" fill="rgba(255,255,255,0.6)" font-family="monospace" font-size="10" text-anchor="middle">Card</text>
+      <text x="10" y="152" fill="rgba(255,255,255,0.3)" font-family="monospace" font-size="7">shadow: lg</text>
+      
+      <!-- Component Card 3 -->
+      <rect x="0" y="170" width="120" height="60" rx="4" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+      <rect x="10" y="180" width="100" height="30" rx="2" fill="rgba(236,72,153,0.1)" stroke="rgba(236,72,153,0.3)" stroke-width="1"/>
+      <text x="60" y="200" fill="rgba(255,255,255,0.6)" font-family="monospace" font-size="10" text-anchor="middle">Input</text>
+    </g>
+    
+    <!-- Center: Generation Engine -->
+    <g transform="translate(140, 110)">
+      <!-- Glow effect -->
+      <circle cx="40" cy="25" r="55" fill="url(#genGlow)" opacity="0.6"/>
+      
+      <!-- Processing ring -->
+      <circle cx="40" cy="25" r="45" fill="none" stroke="rgba(16,185,129,0.2)" stroke-width="1" stroke-dasharray="8 4"/>
+      <circle cx="40" cy="25" r="38" fill="none" stroke="rgba(16,185,129,0.15)" stroke-width="1"/>
+      
+      <!-- Center Icon -->
+      <rect x="20" y="5" width="40" height="40" rx="8" fill="rgba(16,185,129,0.1)" stroke="rgba(16,185,129,0.5)" stroke-width="2"/>
+      <text x="40" y="32" fill="rgba(16,185,129,0.9)" font-family="monospace" font-size="18" font-weight="bold" text-anchor="middle">&lt;/&gt;</text>
+      
+      <!-- Arrows pointing out -->
+      <line x1="85" y1="10" x2="105" y2="0" stroke="rgba(16,185,129,0.3)" stroke-width="1"/>
+      <polygon points="108,-2 105,2 103,-1" fill="rgba(16,185,129,0.3)"/>
+      
+      <line x1="85" y1="25" x2="110" y2="25" stroke="rgba(16,185,129,0.3)" stroke-width="1"/>
+      <polygon points="113,25 108,22 108,28" fill="rgba(16,185,129,0.3)"/>
+      
+      <line x1="85" y1="40" x2="105" y2="50" stroke="rgba(16,185,129,0.3)" stroke-width="1"/>
+      <polygon points="108,52 103,49 105,47" fill="rgba(16,185,129,0.3)"/>
+      
+      <!-- Input arrows -->
+      <line x1="-5" y1="25" x2="15" y2="25" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+      <polygon points="18,25 13,22 13,28" fill="rgba(255,255,255,0.2)"/>
+      
+      <!-- Sparkles -->
+      <circle cx="10" cy="-15" r="2" fill="rgba(16,185,129,0.5)"/>
+      <circle cx="70" cy="-10" r="1.5" fill="rgba(16,185,129,0.4)"/>
+      <circle cx="75" cy="55" r="2" fill="rgba(16,185,129,0.5)"/>
+      <circle cx="5" cy="55" r="1.5" fill="rgba(16,185,129,0.4)"/>
+    </g>
+    
+    <!-- Right: Generated Code Files -->
+    <g transform="translate(260, 0)">
+      <text x="50" y="10" fill="rgba(16,185,129,0.5)" font-family="monospace" font-size="9" text-anchor="middle">Generated Code</text>
+      
+      <!-- File 1: Button.tsx -->
+      <g transform="translate(0, 25)">
+        <rect x="0" y="0" width="100" height="75" rx="4" fill="rgba(10,10,10,0.5)" stroke="rgba(16,185,129,0.25)" stroke-width="1"/>
+        <!-- Window header -->
+        <rect x="0" y="0" width="100" height="18" rx="4" fill="rgba(255,255,255,0.03)"/>
+        <circle cx="10" cy="9" r="2.5" fill="rgba(255,255,255,0.1)"/>
+        <circle cx="18" cy="9" r="2.5" fill="rgba(255,255,255,0.1)"/>
+        <circle cx="26" cy="9" r="2.5" fill="rgba(255,255,255,0.1)"/>
+        <text x="65" y="12" fill="rgba(255,255,255,0.4)" font-family="monospace" font-size="7">Button.tsx</text>
+        <!-- Code -->
+        <text x="6" y="32" fill="rgba(197,134,192,0.8)" font-family="monospace" font-size="6">export</text>
+        <text x="35" y="32" fill="rgba(229,192,123,0.8)" font-family="monospace" font-size="6">Button</text>
+        <text x="6" y="44" fill="rgba(224,108,117,0.7)" font-family="monospace" font-size="6">&lt;button</text>
+        <text x="45" y="44" fill="rgba(209,154,102,0.7)" font-family="monospace" font-size="6">class</text>
+        <text x="6" y="56" fill="rgba(152,195,121,0.7)" font-family="monospace" font-size="6">"btn..."</text>
+        <text x="38" y="56" fill="rgba(224,108,117,0.7)" font-family="monospace" font-size="6">/&gt;</text>
+        <text x="6" y="68" fill="rgba(255,255,255,0.4)" font-family="monospace" font-size="6">);</text>
+      </g>
+      
+      <!-- File 2: Card.tsx -->
+      <g transform="translate(0, 108)">
+        <rect x="0" y="0" width="100" height="75" rx="4" fill="rgba(10,10,10,0.5)" stroke="rgba(139,92,246,0.25)" stroke-width="1"/>
+        <rect x="0" y="0" width="100" height="18" rx="4" fill="rgba(255,255,255,0.03)"/>
+        <circle cx="10" cy="9" r="2.5" fill="rgba(255,255,255,0.1)"/>
+        <circle cx="18" cy="9" r="2.5" fill="rgba(255,255,255,0.1)"/>
+        <circle cx="26" cy="9" r="2.5" fill="rgba(255,255,255,0.1)"/>
+        <text x="62" y="12" fill="rgba(255,255,255,0.4)" font-family="monospace" font-size="7">Card.tsx</text>
+        <text x="6" y="32" fill="rgba(197,134,192,0.8)" font-family="monospace" font-size="6">export</text>
+        <text x="35" y="32" fill="rgba(229,192,123,0.8)" font-family="monospace" font-size="6">Card</text>
+        <text x="6" y="44" fill="rgba(224,108,117,0.7)" font-family="monospace" font-size="6">&lt;div</text>
+        <text x="30" y="44" fill="rgba(209,154,102,0.7)" font-family="monospace" font-size="6">shadow</text>
+        <text x="6" y="56" fill="rgba(255,255,255,0.5)" font-family="monospace" font-size="6">{...}&gt;</text>
+        <text x="6" y="68" fill="rgba(224,108,117,0.7)" font-family="monospace" font-size="6">&lt;/div&gt;</text>
+      </g>
+      
+      <!-- File 3: styles.css -->
+      <g transform="translate(0, 191)">
+        <rect x="0" y="0" width="100" height="55" rx="4" fill="rgba(10,10,10,0.5)" stroke="rgba(251,191,36,0.25)" stroke-width="1"/>
+        <rect x="0" y="0" width="100" height="18" rx="4" fill="rgba(255,255,255,0.03)"/>
+        <circle cx="10" cy="9" r="2.5" fill="rgba(255,255,255,0.1)"/>
+        <circle cx="18" cy="9" r="2.5" fill="rgba(255,255,255,0.1)"/>
+        <circle cx="26" cy="9" r="2.5" fill="rgba(255,255,255,0.1)"/>
+        <text x="60" y="12" fill="rgba(255,255,255,0.4)" font-family="monospace" font-size="7">styles.css</text>
+        <text x="6" y="32" fill="rgba(224,108,117,0.7)" font-family="monospace" font-size="6">.btn</text>
+        <text x="28" y="32" fill="rgba(209,154,102,0.7)" font-family="monospace" font-size="6">{</text>
+        <text x="12" y="44" fill="rgba(137,221,255,0.7)" font-family="monospace" font-size="6">bg:</text>
+        <text x="32" y="44" fill="rgba(152,195,121,0.7)" font-family="monospace" font-size="6">blue;</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Bottom: Output format badges -->
+  <g transform="translate(200, 285)">
+    <g transform="translate(-100, 0)">
+      <rect x="0" y="0" width="40" height="16" rx="8" fill="rgba(97,218,251,0.08)" stroke="rgba(97,218,251,0.3)" stroke-width="0.5"/>
+      <text x="20" y="11" fill="rgba(97,218,251,0.7)" font-family="monospace" font-size="7" text-anchor="middle">React</text>
+    </g>
+    <g transform="translate(-55, 0)">
+      <rect x="0" y="0" width="35" height="16" rx="8" fill="rgba(66,184,131,0.08)" stroke="rgba(66,184,131,0.3)" stroke-width="0.5"/>
+      <text x="17" y="11" fill="rgba(66,184,131,0.7)" font-family="monospace" font-size="7" text-anchor="middle">Vue</text>
+    </g>
+    <g transform="translate(-15, 0)">
+      <rect x="0" y="0" width="35" height="16" rx="8" fill="rgba(56,189,248,0.08)" stroke="rgba(56,189,248,0.3)" stroke-width="0.5"/>
+      <text x="17" y="11" fill="rgba(56,189,248,0.7)" font-family="monospace" font-size="7" text-anchor="middle">HTML</text>
+    </g>
+    <g transform="translate(25, 0)">
+      <rect x="0" y="0" width="55" height="16" rx="8" fill="rgba(244,114,182,0.08)" stroke="rgba(244,114,182,0.3)" stroke-width="0.5"/>
+      <text x="27" y="11" fill="rgba(244,114,182,0.7)" font-family="monospace" font-size="7" text-anchor="middle">Tailwind</text>
+    </g>
+    <g transform="translate(85, 0)">
+      <rect x="0" y="0" width="30" height="16" rx="8" fill="rgba(251,191,36,0.08)" stroke="rgba(251,191,36,0.3)" stroke-width="0.5"/>
+      <text x="15" y="11" fill="rgba(251,191,36,0.7)" font-family="monospace" font-size="7" text-anchor="middle">CSS</text>
+    </g>
+  </g>
+  
+  <!-- Title Block -->
+  <g transform="translate(305, 12)">
+    <rect x="0" y="0" width="80" height="36" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
+    <line x1="0" y1="18" x2="80" y2="18" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
+    <line x1="48" y1="0" x2="48" y2="36" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
+    <text x="4" y="13" fill="rgba(255,255,255,0.3)" font-family="monospace" font-size="7">PHASE 04</text>
+    <text x="4" y="30" fill="rgba(255,255,255,0.4)" font-family="monospace" font-size="9">GENERATE</text>
+    <text x="52" y="13" fill="rgba(255,255,255,0.3)" font-family="monospace" font-size="7">TYPE</text>
+    <text x="52" y="30" fill="rgba(255,255,255,0.4)" font-family="monospace" font-size="9">CODE</text>
+  </g>
+</svg>
