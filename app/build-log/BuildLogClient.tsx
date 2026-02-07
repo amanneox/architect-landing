@@ -1,12 +1,12 @@
 "use client";
 
-import { useState, useCallback, memo } from "react";
+import { useState, useCallback, memo, useMemo } from "react";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import { 
-  CheckCircle2, 
-  XCircle, 
-  Clock, 
-  GitBranch, 
+import {
+  CheckCircle2,
+  XCircle,
+  Clock,
+  GitBranch,
   GitCommit,
   ChevronRight,
   ChevronDown,
@@ -15,6 +15,25 @@ import {
   RotateCcw
 } from "lucide-react";
 import { buildRuns, type BuildRun, type BuildStep } from "@/lib/data/buildRuns";
+
+// Hoisted static JSX to avoid recreation on every render
+const blueprintGrid = (
+  <div
+    className="absolute inset-0 opacity-[0.02]"
+    style={{
+      backgroundImage:
+        "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
+      backgroundSize: "40px 40px",
+    }}
+  />
+);
+
+const cornerDecorations = (
+  <>
+    <div className="absolute top-32 left-6 w-24 h-24 border-l border-t border-white/10" />
+    <div className="absolute top-32 right-6 w-24 h-24 border-r border-t border-white/10" />
+  </>
+);
 
 // Memoized status icon components to prevent re-renders
 const StatusIcon = memo(function StatusIcon({ status }: { status: BuildRun["status"] }) {
@@ -118,7 +137,10 @@ const BuildRunItem = memo(function BuildRunItem({ run, isExpanded, onToggle }: B
   }, [onToggle, run.id]);
 
   return (
-    <div className="border border-white/[0.06] rounded-lg overflow-hidden bg-[#0a0a0a]">
+    <div
+      className="border border-white/[0.06] rounded-lg overflow-hidden bg-[#0a0a0a]"
+      style={{ contentVisibility: "auto", containIntrinsicSize: "auto 80px" }}
+    >
       {/* Header */}
       <button
         onClick={handleToggle}
@@ -179,27 +201,21 @@ export function BuildLogClient() {
     setExpandedRun(prev => prev === id ? null : id);
   }, []);
 
-  // Calculate stats once
-  const stats = {
-    successful: buildRuns.filter(r => r.status === "success").length,
-    failed: buildRuns.filter(r => r.status === "failure").length,
-  };
+  // Single-pass stats calculation
+  const stats = useMemo(() => {
+    let successful = 0;
+    let failed = 0;
+    for (const r of buildRuns) {
+      if (r.status === "success") successful++;
+      else if (r.status === "failure") failed++;
+    }
+    return { successful, failed };
+  }, []);
 
   return (
     <main className="pt-32 pb-20 px-6 relative overflow-hidden min-h-screen bg-[#080808]">
-      {/* Blueprint grid background */}
-      <div
-        className="absolute inset-0 opacity-[0.02]"
-        style={{
-          backgroundImage:
-            "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
-          backgroundSize: "40px 40px",
-        }}
-      />
-
-      {/* Corner decorations */}
-      <div className="absolute top-32 left-6 w-24 h-24 border-l border-t border-white/10" />
-      <div className="absolute top-32 right-6 w-24 h-24 border-r border-t border-white/10" />
+      {blueprintGrid}
+      {cornerDecorations}
 
       <div className="max-w-[1000px] mx-auto relative">
         {/* Header */}

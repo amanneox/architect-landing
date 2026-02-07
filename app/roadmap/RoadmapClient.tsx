@@ -1,11 +1,7 @@
-"use client";
-
-import { useContent } from "@/lib/stores";
+import { staticContent } from "@/lib/data/staticContent";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import Image from "next/image";
 import { Map, ArrowRight } from "lucide-react";
-
-
 
 const statusBadge: Record<string, string> = {
   completed: "text-emerald-400/80 border-emerald-400/20 bg-emerald-400/5",
@@ -14,7 +10,7 @@ const statusBadge: Record<string, string> = {
 };
 
 export function RoadmapClient() {
-  const { roadmapPage } = useContent();
+  const { roadmapPage } = staticContent;
 
   return (
     <main className="pt-32 pb-20 px-6 relative overflow-hidden">
@@ -59,13 +55,17 @@ export function RoadmapClient() {
           </ScrollReveal>
         </div>
 
-        {/* Phases - Clean Layout */}
+        {/* Phases */}
         <div className="space-y-32">
           {roadmapPage.phases.map((phase, index) => {
             const isEven = index % 2 === 0;
-            
+
             return (
-              <div key={phase.id} className="relative">
+              <div
+                key={phase.id}
+                className="relative"
+                style={{ contentVisibility: "auto", containIntrinsicSize: "auto 600px" }}
+              >
                 {/* Phase Number Indicator */}
                 <div className="flex items-center gap-4 mb-8">
                   <span className="text-[64px] md:text-[80px] font-medium text-white/[0.04] leading-none">
@@ -85,11 +85,11 @@ export function RoadmapClient() {
                         </span>
                         <span className="text-white/30 text-[13px] font-mono">{phase.date}</span>
                       </div>
-                      
+
                       <h2 className="text-[32px] md:text-[40px] font-medium text-white mb-4 tracking-tight">
                         {phase.name}
                       </h2>
-                      
+
                       <p className="text-white/50 text-[16px] leading-relaxed mb-8">
                         {phase.description}
                       </p>
@@ -127,7 +127,7 @@ export function RoadmapClient() {
                             backgroundSize: "20px 20px",
                           }}
                         />
-                        
+
                         <div className="absolute inset-6">
                           <Image
                             src={phase.illustration}
@@ -137,7 +137,7 @@ export function RoadmapClient() {
                             sizes="(max-width: 768px) 100vw, 50vw"
                           />
                         </div>
-                        
+
                         {/* Phase badge */}
                         <div className="absolute bottom-4 left-4 bg-[#111]/80 backdrop-blur border border-white/[0.08] rounded-lg px-3 py-2">
                           <span className="text-white/50 text-[11px] font-mono">PHASE 0{index + 1}</span>
@@ -160,8 +160,8 @@ export function RoadmapClient() {
                   What&apos;s next?
                 </h2>
                 <p className="text-white/50 text-[16px] leading-relaxed mb-6">
-                  Beyond the core platform, we&apos;re exploring AI-assisted design, 
-                  generative layouts, and real-time collaboration at scale. 
+                  Beyond the core platform, we&apos;re exploring AI-assisted design,
+                  generative layouts, and real-time collaboration at scale.
                   The blueprint is just the beginning.
                 </p>
                 <a
@@ -172,7 +172,7 @@ export function RoadmapClient() {
                   <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                 </a>
               </div>
-              
+
               {/* Decorative Blueprint Element */}
               <div className="relative h-[200px] border border-white/[0.06] rounded-xl overflow-hidden">
                 <div

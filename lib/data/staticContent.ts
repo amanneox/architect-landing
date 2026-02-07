@@ -104,6 +104,80 @@ export const staticContent = {
     ],
   },
 
+  roadmapPage: {
+    label: "Product Roadmap",
+    headline: "Designing the",
+    headlineAccent: "future",
+    description:
+      "See how we're building the ultimate tool for software architects and designers. From system diagrams to user flows, we're crafting the blueprint for better software.",
+    phases: [
+      {
+        id: "diagram",
+        name: "System Diagrams",
+        date: "Q4 2025",
+        status: "completed",
+        description:
+          "The core canvas for visualizing software architecture. We've built the foundation for creating system diagrams, flowcharts, and technical documentation with precision.",
+        illustration: "/images/illustrations/roadmap-foundation.svg",
+        features: [
+          { id: "canvas", title: "Infinite Canvas", description: "Pan and zoom with 60fps performance" },
+          { id: "shapes", title: "Smart Shapes", description: "Auto-resizing containers and connectors" },
+          { id: "snapping", title: "Flow Alignment", description: "Intelligent node snapping and routing" },
+          { id: "symbols", title: "Symbol Library", description: "AWS, Azure, GCP, and standard icons" },
+        ],
+      },
+      {
+        id: "logic",
+        name: "Logic & Flows",
+        date: "Q1 2026",
+        status: "in-progress",
+        description:
+          "Mapping the logic that powers applications. We're adding user flows, state machines, decision trees, and the tools to visualize complex business logic.",
+        illustration: "/images/illustrations/roadmap-structure.svg",
+        features: [
+          { id: "userflows", title: "User Flows", description: "End-to-end journey mapping" },
+          { id: "state", title: "State Machines", description: "Visual state transitions and events" },
+          { id: "sequence", title: "Sequence Diagrams", description: "API and service interactions" },
+          { id: "erd", title: "Database Schema", description: "Entity relationships and models" },
+        ],
+      },
+      {
+        id: "prototype",
+        name: "Interactive Prototypes",
+        date: "Q2 2026",
+        status: "planned",
+        description:
+          "Bring designs to life with interactive prototypes. Connect screens, add transitions, and simulate the full user experience before writing code.",
+        illustration: "/images/illustrations/roadmap-facade.svg",
+        features: [
+          { id: "wireframes", title: "Wireframing", description: "Low to high fidelity screens" },
+          { id: "links", title: "Interactive Links", description: "Clickable hotspots and transitions" },
+          { id: "data", title: "Data Binding", description: "Real data in prototypes" },
+          { id: "preview", title: "Live Preview", description: "Test on device instantly" },
+        ],
+      },
+      {
+        id: "generate",
+        name: "Code Generation",
+        date: "Q3 2026",
+        status: "planned",
+        description:
+          "Turn designs into production-ready code. Generate React components, API specs, database schemas, and documentation directly from your diagrams.",
+        illustration: "/images/illustrations/roadmap-generate.svg",
+        features: [
+          { id: "react", title: "React Export", description: "Components with Tailwind CSS" },
+          { id: "api", title: "API Specs", description: "OpenAPI from sequence diagrams" },
+          { id: "sql", title: "SQL Generation", description: "Schemas from ER diagrams" },
+          { id: "docs", title: "Documentation", description: "Auto-generated technical docs" },
+        ],
+      },
+    ],
+    cta: {
+      label: "Share your ideas",
+      href: "mailto:feedback@architect.design",
+    },
+  },
+
   footer: {
     description:
       "The visual platform for software architects and engineering teams. Design systems, generate code, ship faster.",

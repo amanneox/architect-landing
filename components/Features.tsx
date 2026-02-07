@@ -1,65 +1,26 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
-import { memo, useCallback } from "react";
 import { FileText, Shapes, ArrowUpRight, type LucideIcon } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import { useSetHoveredFeature } from "@/lib/stores";
 import { staticContent } from "@/lib/data/staticContent";
-
-// Type definitions
-interface FeatureCard {
-  id: string;
-  title: string;
-  description: string;
-  image: string;
-  link: {
-    label: string;
-    href: string;
-    icon: string;
-  };
-}
-
-interface MiniFeature {
-  label: string;
-  description: string;
-}
 
 const iconMap: Record<string, LucideIcon> = {
   "file-text": FileText,
   "shapes": Shapes,
 };
 
-// Memoized feature card to prevent unnecessary re-renders
-interface FeatureCardProps {
-  card: FeatureCard;
-  index: number;
-  onHover: (id: string | null) => void;
-}
-
-const FeatureCard = memo(function FeatureCard({
+function FeatureCard({
   card,
   index,
-  onHover,
-}: FeatureCardProps) {
+}: {
+  card: (typeof staticContent.features.cards)[number];
+  index: number;
+}) {
   const Icon = iconMap[card.link.icon];
-
-  const handleMouseEnter = useCallback(() => {
-    onHover(card.id);
-  }, [onHover, card.id]);
-
-  const handleMouseLeave = useCallback(() => {
-    onHover(null);
-  }, [onHover]);
 
   return (
     <ScrollReveal delay={index * 150}>
-      <div 
-        className="group"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
+      <div className="group">
         <div className="relative aspect-[4/3] rounded-xl overflow-hidden mb-5 bg-[#0f0f0f] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
           <Image
             src={card.image}
@@ -71,7 +32,7 @@ const FeatureCard = memo(function FeatureCard({
           />
           <div className="absolute inset-0 bg-white/[0.02] opacity-0 group-hover:opacity-100 transition-opacity" />
         </div>
-        
+
         <div className="flex items-start justify-between">
           <div>
             <h3 className="text-white font-medium text-[16px] mb-2">
@@ -92,32 +53,15 @@ const FeatureCard = memo(function FeatureCard({
       </div>
     </ScrollReveal>
   );
-});
-
-// Memoized mini feature
-interface MiniFeatureProps {
-  feature: MiniFeature;
-  onHover: (id: string | null) => void;
 }
 
-const MiniFeature = memo(function MiniFeature({
+function MiniFeature({
   feature,
-  onHover,
-}: MiniFeatureProps) {
-  const handleMouseEnter = useCallback(() => {
-    onHover(feature.label);
-  }, [onHover, feature.label]);
-
-  const handleMouseLeave = useCallback(() => {
-    onHover(null);
-  }, [onHover]);
-
+}: {
+  feature: (typeof staticContent.features.miniFeatures)[number];
+}) {
   return (
-    <div 
-      className="group cursor-default"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
+    <div className="group cursor-default">
       <div className="flex items-center gap-2 mb-2">
         <span className="text-white/70 text-[14px] font-medium group-hover:text-white transition-colors">
           {feature.label}
@@ -127,15 +71,10 @@ const MiniFeature = memo(function MiniFeature({
       <p className="text-white/30 text-[12px]">{feature.description}</p>
     </div>
   );
-});
+}
 
-function FeaturesComponent() {
-  const setHoveredFeature = useSetHoveredFeature();
+export function Features() {
   const { features } = staticContent;
-
-  const handleHover = useCallback((id: string | null) => {
-    setHoveredFeature(id);
-  }, [setHoveredFeature]);
 
   return (
     <section className="py-20 px-6 relative">
@@ -153,24 +92,22 @@ function FeaturesComponent() {
         </ScrollReveal>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {(features.cards as unknown as FeatureCard[]).map((card, index) => (
-            <FeatureCard 
-              key={card.id} 
-              card={card} 
+          {features.cards.map((card, index) => (
+            <FeatureCard
+              key={card.id}
+              card={card}
               index={index}
-              onHover={handleHover}
             />
           ))}
         </div>
-        
+
         <ScrollReveal delay={200}>
           <div className="mt-16 pt-16 border-t border-white/[0.06]">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {(features.miniFeatures as unknown as MiniFeature[]).map((feature) => (
-                <MiniFeature 
-                  key={feature.label} 
+              {features.miniFeatures.map((feature) => (
+                <MiniFeature
+                  key={feature.label}
                   feature={feature}
-                  onHover={handleHover}
                 />
               ))}
             </div>
@@ -180,5 +117,3 @@ function FeaturesComponent() {
     </section>
   );
 }
-
-export const Features = memo(FeaturesComponent);
